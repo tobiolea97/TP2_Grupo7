@@ -31,7 +31,7 @@ public class EntradaRecital extends Entrada implements IEntradaNeg {
 		
 	}
 
-	public EntradaRecital(String nombreEvento, TipoEvento tipoEvento, DateFormat fechaHoraEvento,
+	public EntradaRecital(String nombreEvento, TipoEvento tipoEvento, DateFormat fechaHoraEvento, int tipoEntrada,
 			int duracionEvento, Banda banda, GeneroRecital gen, Banda primeraBandaSoporte, Banda segundaBandaSoporte) {
 		
 		super(nombreEvento, tipoEvento, fechaHoraEvento, duracionEvento);
@@ -41,10 +41,12 @@ public class EntradaRecital extends Entrada implements IEntradaNeg {
 		String nroEntrada = CodigoEntrada + numEntrada;
 		setNroEntrada(nroEntrada);
 		
-		Banda = banda;
 		genero = gen;
-		PrimeraBandaSoporte = primeraBandaSoporte;
-		SegundaBandaSoporte = segundaBandaSoporte;
+		
+		if(banda != null) Banda = banda; 
+		if(primeraBandaSoporte != null) PrimeraBandaSoporte = primeraBandaSoporte;
+		if(segundaBandaSoporte != null) SegundaBandaSoporte = segundaBandaSoporte;
+		SetearPrecioEntrada(tipoEntrada);
 	}
 
 	//GETTERS AND SETTERS
