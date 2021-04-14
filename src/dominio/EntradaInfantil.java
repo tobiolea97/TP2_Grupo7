@@ -113,5 +113,13 @@ public class EntradaInfantil extends Entrada implements IEntradaNeg {
 			return false;
 		return true;
 	}
+
+	@Override
+	public int compareTo(Entrada o) {
+	
+		return OrdenamientoEntradas(o.getNroEntrada(),super.getNroEntrada());
+		
+		
+	}
 		
 }

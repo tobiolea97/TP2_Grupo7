@@ -2,7 +2,7 @@ package dominio;
 
 import java.util.ArrayList;
 
-public class Deporte {
+public class Deporte{
 	
 	int Id;
 	String nombreDeporte;
@@ -18,8 +18,7 @@ public class Deporte {
 	public Deporte(int id) {
 		super();
 		Id = id;
-		this.nombreDeporte = nombreDeporte;
-		this.precio = precio;
+		
 		
 		if(id == 1)
 		{
@@ -58,26 +57,13 @@ public class Deporte {
 		Id = id;
 	}
 
-
-
-	public Deporte(String nombreDeporte, double precio) {
-		
-		this.nombreDeporte = nombreDeporte;
-		this.precio = precio;
-	}
-
-	@Override
-	public String toString() {
-		return "Deporte [nombreDeporte=" + nombreDeporte + "]";
-	}
+	
 
 	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
+	
 
 	public String getNombreDeporte() {
 		return nombreDeporte;
@@ -86,5 +72,17 @@ public class Deporte {
 	public void setNombreDeporte(String nombreDeporte) {
 		this.nombreDeporte = nombreDeporte;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Deporte [Id=" + Id + ", nombreDeporte=" + nombreDeporte + ", precio=" + precio  + "]";
+	}
+
+
+
+	
+	
 
 }

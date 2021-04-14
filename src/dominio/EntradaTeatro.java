@@ -130,5 +130,12 @@ public class EntradaTeatro extends Entrada {
 			return false;
 		return true;
 	}
+
+	@Override
+	public int compareTo(Entrada o) {
+	
+		return OrdenamientoEntradas(o.getNroEntrada(),super.getNroEntrada());
+		
+	}
 	
 }

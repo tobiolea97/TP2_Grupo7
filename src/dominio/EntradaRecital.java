@@ -199,5 +199,14 @@ public class EntradaRecital extends Entrada implements IEntradaNeg {
 		return true;
 	}
 
+	@Override
+	public int compareTo(Entrada o) {
+		
+		
+		return OrdenamientoEntradas(o.getNroEntrada(),super.getNroEntrada());
+		
+		
+	}
+
 	
 }
