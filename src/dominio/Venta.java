@@ -2,6 +2,7 @@ package dominio;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.ListIterator;
 
 public class Venta {
 	
@@ -19,14 +20,19 @@ public class Venta {
 		super(); 
 	}
 	
-	public Venta(DateFormat fecha, Cliente client, double total, ArrayList<Entrada> entradas) {
+	public Venta(DateFormat fecha, Cliente client, ArrayList<Entrada> entradas) {
 		super();
 		Numerador = Numerador + 1;
 		Id = Numerador;
 		Fecha = fecha;
 		Client = client;
-		Total = total;
 		Entradas = entradas;
+		ListIterator<Entrada> iterator = entradas.listIterator();
+		while(iterator.hasNext())
+		{
+			Total += iterator.next().getPrecio();
+		}	
+		
 	}
 	
 	// Getters y setter
@@ -60,7 +66,26 @@ public class Venta {
 	public void setEntradas(ArrayList<Entrada> entradas) {
 		Entradas = entradas;
 	}
-	
-	// Metodos
+
+	@Override
+	public String toString() {
+		
+		ListIterator<Entrada> iterator = Entradas.listIterator();
+		String stringEntradas = "";
+		while(iterator.hasNext())
+		{
+			Entrada entrada = iterator.next();
+			stringEntradas += "----- Id: " + entrada.getNroEntrada();
+			stringEntradas += " - Nombre evento: " + entrada.getNombreEvento() + "\n";
+		}
+		
+		return
+			"Numero de entrada: " + Id + "\n" +
+			"Fecha: " + Fecha + "\n" +
+			"Cliente: " + Client.getApellido() + " " + Client.getNombre()  + "\n" +
+			"Total: " + Total + "\n" +
+			"Entradas: \n" + stringEntradas;
+			
+	}
 	
 }

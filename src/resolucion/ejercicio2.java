@@ -25,7 +25,7 @@ public class ejercicio2 {
 	public static void main(String[] args) {
 		
 
-		/////////////////////////////////// PUNTO A ///////////////////////////////////
+		/////////////////////////////////// PUNTO B ///////////////////////////////////
 		/// Creacion de Lista
 		TreeSet<Entrada> listarEntrada = new TreeSet<Entrada>();
 
@@ -82,7 +82,7 @@ public class ejercicio2 {
 		Iterator<Entrada> it = listarEntrada.iterator();
 		
 		System.out.println("************************************************");
-		System.out.println("Todas las entradas ordenadas por N� de Entrada de forma creciente");
+		System.out.println("Todas las entradas ordenadas por Numero de Entrada de forma creciente");
 		
 		// recorrer Interador
 		while(it.hasNext()) {
