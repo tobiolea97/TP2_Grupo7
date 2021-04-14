@@ -5,7 +5,8 @@ import java.util.Date;
 
 import interfaces.IEntradaNeg;
 
-public  class EntradaDeporte  extends Entrada {
+public  class EntradaDeporte  extends Entrada  {
+		
 		Deporte D1;
 		private final static String CodigoEntrada = "D-";
 		double valorEntrada;
@@ -32,6 +33,7 @@ public  class EntradaDeporte  extends Entrada {
 		setNroEntrada(nroEntrada);
 		SetearPrecioEntrada(0);
 	}
+	
 
 
 	public Deporte getD1() {
@@ -43,6 +45,31 @@ public  class EntradaDeporte  extends Entrada {
 	public void setD1(Deporte d1) {
 		D1 = d1;
 	}
+	
+	public double getValorEntrada() {
+		return valorEntrada;
+	}
+
+
+	public void setValorEntrada(double valorEntrada) {
+		this.valorEntrada = valorEntrada;
+	}
+
+
+	public boolean isInternacional() {
+		return Internacional;
+	}
+
+
+	public void setInternacional(boolean internacional) {
+		Internacional = internacional;
+	}
+
+
+	public static String getCodigoentrada() {
+		return CodigoEntrada;
+	}
+
 
 	@Override
 	public void SetearPrecioEntrada(int valorEntrada) {
@@ -55,4 +82,24 @@ public  class EntradaDeporte  extends Entrada {
 	public String toString() {
 		return super.toString()+ "\n";
 	}
+
+
+
+	@Override
+	public int compareTo(Entrada o) {
+	
+		
+		return OrdenamientoEntradas(o.getNroEntrada(),super.getNroEntrada());
+		
+		
+	}
+
+	
+	
+
+
+
+
+
+	
 }

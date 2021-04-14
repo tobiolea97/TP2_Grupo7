@@ -16,14 +16,14 @@ public class Venta {
 	
 	// Constructores
 	public Venta() {
-		super();
+		super(); 
 	}
 	
 	public Venta(DateFormat fecha, Cliente client, double total, ArrayList<Entrada> entradas) {
 		super();
 		Numerador = Numerador + 1;
 		Id = Numerador;
-		DateFormat = fecha;
+		Fecha = fecha;
 		Client = client;
 		Total = total;
 		Entradas = entradas;

@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 
-public abstract class  Entrada {
+public abstract class  Entrada implements Comparable<Entrada> {
 	
 	private static int ContEntradas;
 
@@ -99,6 +99,9 @@ public abstract class  Entrada {
 		return result;
 	}
 
+	
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -131,5 +134,29 @@ public abstract class  Entrada {
 	}
 
 	public abstract void SetearPrecioEntrada(int tipoEntrada);
+	
+	
+	/// funcion que ordena la lista mediante parametro -1 , 0 y 1
+	public int OrdenamientoEntradas(String _a, String _b) {
+		String a= _a;
+		String b= _b;
+		
+		String cad1 =a;
+		String[] parts = a.split("-");
+		String part1 = parts[1];
+		
+		String cad2 =b;
+		String[] parts2 = b.split("-");
+		String part2 = parts2[1];
+		
+		
+		if(Integer.parseInt(part1) == Integer.parseInt(part2)) {
+					
+					return 0;
+				}
+				if(Integer.parseInt(part1) < Integer.parseInt(part2))return 1;
+				
+				return -1;
+	}
 	 
 }
